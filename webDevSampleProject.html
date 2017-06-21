@@ -1,0 +1,87 @@
+<!--
+	
+	INSTRUCTIONS
+	------------
+	1 -	Using jQuery and without modifying anything in the <body> tag, enable the video controls below each video.
+	2 - Using jQuery and without modifying anything in the <body> tag, enable the "Sort videos" link. Videos should be sorted by their title in the <h2> tag. Video controls must still work after sorting.
+	3 - Using CSS and without modifying anyhting in the <body> tag, make this page responsive so that the desktop version matches the included mockup (desktopResponsive.jpg).
+	4 - In a seperate file, re-create this page and improve upon the HTML, CSS and JavaScript in any way you see fit. You can use any liraries, frameworks, etc that you want. You have the freedom to modify the design and layout as well if you wish. Just be sure to implement the functionality in steps #1 - 3 above. 
+	5 - In the new file you created in step #4, implement the navigation as designed in the attached files (navMobileOpen.jpg, navMobileClosed.jpg, navDesktop.jpg).
+	
+	NOTES: 
+	------
+	1 - Colors and sizing don't need to match the mockups exactly in this exercise. Just get as close as you can.
+
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sample</title>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>	
+		<script src="js/script.js"></script>
+	</head>
+	<body>
+		
+		<a href="#" id="sortVideos">Sort features alphabetically</a>
+		
+		<div id="features">
+			<div id="extensions" class="feature">
+				<h2>Vonage Extensions App</h2>
+				<div>
+					You can take Vonage home phone service with you—make and receive calls on your smartphones, plus get free Wi-Fi calling, too (standard data rates apply).
+				</div>
+				<video>
+					<source src="http://www.vonage.com/resources/dotcom/videos/Extensions_App.mp4" type="video/mp4"/>
+				</video>
+				<div class="controls">
+					<a href="#" class="rewindButton">&#8634;</a>
+					<a href="#" class="playButton">&#9654;</a>
+					<a href="#" class="pauseButton">=</a>
+
+				</div>
+			</div>
+			
+			<div id="simulring" class="feature">
+				<h2>SimulRing</h2>
+				<div>
+					SimulRing can ring up to five additional phones at the same time—landlines, cells and smartphones—so you’ll be sure to catch critical incoming calls.
+				</div>
+				<video>
+					<source src="http://www.vonage.com/resources/dotcom/videos/SimulRing.mp4" type="video/mp4"/>
+				</video>
+				<div class="controls">
+					<a href="#" class="rewindButton">&#8634;</a>
+					<a href="#" class="playButton">&#9654;</a>
+					<a href="#" class="pauseButton">=</a>
+				</div>
+			</div>
+			
+			<div id="boomerang" class="feature">
+				<h2>Vonage Boomerang</h2>
+				<div>
+					Get in touch with friends and family around the world faster and more easily with this cool feature that’s included FREE with your Vonage plan!
+				</div>
+				<video>
+					<source src="http://www.vonage.com/resources/dotcom/videos/Boomerang.mp4" type="video/mp4"/>
+				</video>
+				<div class="controls">
+					<a href="#" class="rewindButton">&#8634;</a>
+					<a href="#" class="playButton">&#9654;</a>
+					<a href="#" class="pauseButton">=</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer">
+			&copy; 2016 Vonage
+		</div>
+
+	</body>
+</html>
