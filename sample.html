@@ -1,0 +1,264 @@
+<!--
+	
+	INSTRUCTIONS
+	------------
+	1 -	Using jQuery and without modifying anything in the <body> tag, enable the video controls below each video.
+	2 - Using jQuery and withoutout modifying anything in the <body> tag, enable the "Sort videos" link. Videos should be sorted by their title in the <h2> tag. Video controls must still work after sorting.
+	3 - Using CSS and without modifying anyhting in the <body> tag, make this page responsive so that the desktop version matches the included mockup (desktopResponsive.jpg).
+	4 - In a seperate file, re-create this page and improve upon the HTML, CSS and JavaScript in any way you see fit. You can use any liraries, frameworks, etc that you want. You have the freedom to modify the design and layout as well if you wish. Just be sure to implement the functionality in steps #1 - 3 above. 
+	5 - In the new file you created in step #4, implement the navigation as designed in the attached files (navMobileOpen.jpg, navMobileClosed.jpg, navDesktop.jpg).
+	
+	NOTES: 
+	------
+	1 - Colors and sizing don't need to match the mockups exactly in this exercise. Just get as close as you can.
+
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sample</title>
+		<META http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+		<style>
+			html, body {
+				box-sizing: border-box;
+				font-family: arial;
+				margin:0;
+				padding:0;
+			}
+			
+			#sortVideos {
+				margin:10px auto;
+				display: block;
+				text-align: center;
+				color:#0075C9;
+			}
+
+			#features {
+				text-align: center;
+			}
+			
+			#features .feature {
+				position: relative;
+				float: center;
+				min-width: 300px;
+				width: 30%;
+				display: inline-block;
+				background-color:#f9f9f9;
+				border:1px solid #d5d5d5;
+				margin: 10px;
+				padding:20px;
+				box-sizing: border-box;
+			}
+			
+			#features .feature h2 {
+				margin:0 0 10px;
+				color:#0075C9;
+			}
+			
+			#features .feature video {
+				width:100%;
+				margin-top:20px;
+				border:1px solid #d5d5d5;
+			}
+			
+			#features .feature .controls {
+				width:100%;
+				border:1px solid #fff;
+				box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.5);
+				background-color: #000000;
+				text-align: center;
+				margin-top:10px;
+				padding:5px;
+				box-sizing: border-box;
+			}
+			
+			#features .feature a {
+				color:#fff;
+				text-decoration: none;
+				margin:0 5px;
+				display:inline-block;
+			}
+			
+			#features .feature a.pauseButton {
+				transform: rotate(90deg);
+				-webkit-transform: rotate(90deg);
+				font-size:160%;
+			}
+			
+			.footer {
+				width:100%;
+				padding:20px;
+				text-align: center;
+				color:#b8b8bd;
+				background-color: #49494b;
+				margin-top:20px;
+			}
+			/* --------------------------------------------------- */
+			/* Add a black background color to the top navigation */
+			.topnav {
+			    background-color: #f9f9f9;
+			    overflow: hidden;
+			}
+
+			/* Style the links inside the navigation bar */
+			.topnav a {
+			    float: left;
+			    display: block;
+			    color: black;
+			    text-align: center;
+			    padding: 14px 16px;
+			    text-decoration: none;
+			    font-size: 17px;
+			}
+
+			/* Change the color of links on hover */
+			.topnav a:hover {
+			    background-color: #ddd;
+			    color: black;
+			}
+
+			/* Hide the link that should open and close the topnav on small screens */
+			.topnav .icon {
+			    display: none;
+			}
+
+			/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+			@media screen and (max-width: 600px) {
+			  .topnav a:not(:first-child) {display: none;}
+			  .topnav a.icon {
+			    float: right;
+			    display: block;
+			  }
+			}
+
+			/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+			@media screen and (max-width: 600px) {
+			  .topnav.responsive {position: relative;}
+			  .topnav.responsive a.icon {
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+			  }
+			  .topnav.responsive a {
+			    float: none;
+			    display: block;
+			    text-align: left;
+			  }
+			}
+
+		</style>
+		
+		<script>
+			
+
+		</script>
+
+	</head>
+	<body>
+
+		<div class="topnav" id="myTopnav">
+		  <a href="#home">Home</a>
+		  <a href="#features">Features</a>
+		  <a href="#plans">Plans</a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
+		
+		<a href="#" id="sortVideos">Sort features alphabetically</a>
+		
+		<div id="features">
+			<div id="extensions" class="feature">
+				<h2>Vonage Extensions App</h2>
+				<div>
+					You can take Vonage home phone service with you—make and receive calls on your smartphones, plus get free Wi-Fi calling, too (standard data rates apply).
+				</div>
+				<video>
+					<source src="http://www.vonage.com/resources/dotcom/videos/Extensions_App.mp4" type="video/mp4"/>
+				</video>
+				<div class="controls">
+					<a href="#" class="rewindButton">&#8634;</a>
+					<a href="#" class="playButton">&#9654;</a>
+					<a href="#" class="pauseButton">=</a>
+
+				</div>
+			</div>
+			
+			<div id="simulring" class="feature">
+				<h2>SimulRing</h2>
+				<div>
+					SimulRing can ring up to five additional phones at the same time—landlines, cells and smartphones—so you’ll be sure to catch critical incoming calls.
+				</div>
+				<video>
+					<source src="http://www.vonage.com/resources/dotcom/videos/SimulRing.mp4" type="video/mp4"/>
+				</video>
+				<div class="controls">
+					<a href="#" class="rewindButton">&#8634;</a>
+					<a href="#" class="playButton">&#9654;</a>
+					<a href="#" class="pauseButton">=</a>
+				</div>
+			</div>
+			
+			<div id="boomerang" class="feature">
+				<h2>Vonage Boomerang</h2>
+				<div>
+					Get in touch with friends and family around the world faster and more easily with this cool feature that’s included FREE with your Vonage plan!
+				</div>
+				<video>
+					<source src="http://www.vonage.com/resources/dotcom/videos/Boomerang.mp4" type="video/mp4"/>
+				</video>
+				<div class="controls">
+					<a href="#" class="rewindButton">&#8634;</a>
+					<a href="#" class="playButton">&#9654;</a>
+					<a href="#" class="pauseButton">=</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer">
+			&copy; 2016 Vonage
+		</div>
+
+		<script>
+			$( document ).ready(function() {
+			    // 1 step
+			    $('.playButton').on('click', function(){
+			    	$(this).parent().prev()[0].play();
+			    });
+
+			    $('.pauseButton').on('click', function(){
+			   		$(this).parent().prev()[0].pause();
+			    });   
+
+			    $('.rewindButton').on('click', function(){
+			   		$(this).parent().prev()[0].currentTime = 0;
+			    });   
+
+			    // 2 step
+				$('#sortVideos').on('click', function(){
+				   $('#features .feature').sort(function(a, b){
+				   		console.log($(a).first().text());
+				   		return $(a).first().text() > $(b).first().text();
+				   }).appendTo('#features');
+				 });
+				// next
+				#features
+			});
+
+			function myFunction() {
+			    var x = document.getElementById("myTopnav");
+			    if (x.className === "topnav") {
+			        x.className += " responsive";
+			    } else {
+			        x.className = "topnav";
+			    }
+			}
+		</script>
+
+	</body>
+</html>
